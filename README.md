@@ -14,14 +14,14 @@
 
 ## Установка
 
-После публикации замените `<OWNER>` на имя владельца GitHub-репозитория.
+Репозиторий опубликован владельцем [`potatotatoshka`](https://github.com/potatotatoshka).
 
 ### На всех поддерживаемых платформах
 
 Самый простой способ — установить навык во все совместимые агенты, обнаруженные на компьютере. Нужен Node.js:
 
 ```bash
-npx skills add https://github.com/<OWNER>/ru-infostyle-editor --skill ru-infostyle-editor --agent '*' --global
+npx skills add https://github.com/potatotatoshka/ru-infostyle-editor --skill ru-infostyle-editor --agent '*' --global
 ```
 
 Утилита `npx skills` автоматически выбирает правильные каталоги для Codex, Claude Code, Antigravity, Cursor, Windsurf, GitHub Copilot, Gemini CLI и других совместимых агентов. Добавьте `--copy`, если символические ссылки в вашей среде недоступны.
@@ -29,7 +29,7 @@ npx skills add https://github.com/<OWNER>/ru-infostyle-editor --skill ru-infosty
 Чтобы установить навык только в несколько платформ:
 
 ```bash
-npx skills add https://github.com/<OWNER>/ru-infostyle-editor --skill ru-infostyle-editor --agent codex --agent claude-code --agent antigravity --agent cursor --agent windsurf --agent github-copilot --agent gemini-cli --global
+npx skills add https://github.com/potatotatoshka/ru-infostyle-editor --skill ru-infostyle-editor --agent codex --agent claude-code --agent antigravity --agent cursor --agent windsurf --agent github-copilot --agent gemini-cli --global
 ```
 
 Полный и обновляемый список поддерживаемых агентов ведёт проект [`vercel-labs/skills`](https://github.com/vercel-labs/skills).
@@ -39,7 +39,7 @@ npx skills add https://github.com/<OWNER>/ru-infostyle-editor --skill ru-infosty
 Откройте новый чат в Codex и попросите:
 
 ```text
-Установи скилл из https://github.com/<OWNER>/ru-infostyle-editor/tree/main/skills/ru-infostyle-editor
+Установи скилл из https://github.com/potatotatoshka/ru-infostyle-editor/tree/main/skills/ru-infostyle-editor
 ```
 
 ### Вручную
