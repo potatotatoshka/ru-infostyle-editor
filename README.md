@@ -16,6 +16,24 @@
 
 После публикации замените `<OWNER>` на имя владельца GitHub-репозитория.
 
+### На всех поддерживаемых платформах
+
+Самый простой способ — установить навык во все совместимые агенты, обнаруженные на компьютере. Нужен Node.js:
+
+```bash
+npx skills add https://github.com/<OWNER>/ru-infostyle-editor --skill ru-infostyle-editor --agent '*' --global
+```
+
+Утилита `npx skills` автоматически выбирает правильные каталоги для Codex, Claude Code, Antigravity, Cursor, Windsurf, GitHub Copilot, Gemini CLI и других совместимых агентов. Добавьте `--copy`, если символические ссылки в вашей среде недоступны.
+
+Чтобы установить навык только в несколько платформ:
+
+```bash
+npx skills add https://github.com/<OWNER>/ru-infostyle-editor --skill ru-infostyle-editor --agent codex --agent claude-code --agent antigravity --agent cursor --agent windsurf --agent github-copilot --agent gemini-cli --global
+```
+
+Полный и обновляемый список поддерживаемых агентов ведёт проект [`vercel-labs/skills`](https://github.com/vercel-labs/skills).
+
 ### Через Codex
 
 Откройте новый чат в Codex и попросите:
@@ -33,6 +51,21 @@
 ```
 
 На Windows это обычно `%USERPROFILE%\.codex\skills\ru-infostyle-editor`. После установки начните новый чат, чтобы Codex обнаружил навык.
+
+### Ручная установка в других агентах
+
+Скопируйте одну и ту же папку `skills/ru-infostyle-editor` в каталог навыков нужной платформы:
+
+| Платформа | Глобальный каталог | Каталог в проекте |
+|---|---|---|
+| Claude Code | `~/.claude/skills/ru-infostyle-editor` | `.claude/skills/ru-infostyle-editor` |
+| Antigravity | `~/.gemini/config/skills/ru-infostyle-editor` | `.agents/skills/ru-infostyle-editor` |
+| Cursor | `~/.cursor/skills/ru-infostyle-editor` | `.agents/skills/ru-infostyle-editor` |
+| Windsurf | `~/.codeium/windsurf/skills/ru-infostyle-editor` | `.windsurf/skills/ru-infostyle-editor` |
+| GitHub Copilot | `~/.copilot/skills/ru-infostyle-editor` | `.agents/skills/ru-infostyle-editor` |
+| Gemini CLI | `~/.gemini/skills/ru-infostyle-editor` | `.agents/skills/ru-infostyle-editor` |
+
+Навык намеренно использует только переносимое YAML-ядро `name` и `description`; поэтому один и тот же `SKILL.md` подходит разным агентам. Метаданные в `agents/openai.yaml` нужны только интерфейсу Codex и безвредны для остальных.
 
 ## Использование
 
